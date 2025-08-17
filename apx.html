@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Boy Says Hi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .boy {
+      font-size: 100px;
+      margin-bottom: 20px;
+    }
+
+    .ice-cream {
+      font-size: 60px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .ice-cream:hover {
+      transform: scale(1.5);
+    }
+
+    .speech {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #fff;
+      border: 2px solid #333;
+      border-radius: 20px;
+      display: none;
+      font-size: 24px;
+      position: relative;
+    }
+
+    .speech::after {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 20px;
+      border: 10px solid transparent;
+      border-bottom-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="boy">👦</div>
+  <div class="ice-cream" onclick="sayHi()">🍦</div>
+  <div class="speech" id="speechBubble">Hi!</div>
+
+  <script>
+    function sayHi() {
+      const bubble = document.getElementById('speechBubble');
+      bubble.style.display = 'block';
+      setTimeout(() => {
+        bubble.style.display = 'none';
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
